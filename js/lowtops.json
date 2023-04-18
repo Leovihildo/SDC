@@ -8,7 +8,7 @@
         "price": 200000,
         "lace_colour": "pink",
         "sole_type": "solid",
-        "image": "../images/sneakers/LowTop/adidas-yeezy-lowTop4.jpg"
+        "image": "images/sneakers/LowTop/adidas-yeezy-lowTop4.jpg"
     },
     {
         "brand_name": "Adidas",
@@ -19,7 +19,7 @@
         "price": 200000,
         "lace_colour": "white",
         "sole_type": "solid",
-        "image": "../images/sneakers/LowTop/adidas-lowTop3.jpg"
+        "image": "images/sneakers/LowTop/adidas-lowTop3.jpg"
     },
     {
         "brand_name": "Adidas",
@@ -30,7 +30,7 @@
         "price": 200000,
         "lace_colour": "peach",
         "sole_type": "solid",
-        "image": "../images/sneakers/LowTop/adidas-lowTop.jpg"
+        "image": "images/sneakers/LowTop/adidas-lowTop.jpg"
     },
     {
         "brand_name": "Adidas",
@@ -41,6 +41,6 @@
         "price": 200000,
         "lace_colour": "white",
         "sole_type": "solid",
-        "image": "../images/sneakers/LowTop/adidas-lowTop2.jpg"
+        "image": "images/sneakers/LowTop/adidas-lowTop2.jpg"
     }
 ]
