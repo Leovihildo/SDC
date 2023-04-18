@@ -8,7 +8,7 @@
         "price": 200000,
         "lace_colour": "black",
         "sole_type": "solid",
-        "image": "../images/sneakers/HighTop/nike-highTop1.jpg"
+        "image": "images/sneakers/HighTop/nike-highTop1.jpg"
     },
     {
         "brand_name": "Adidas",
@@ -19,7 +19,7 @@
         "price": 200000,
         "lace_colour": "black",
         "sole_type": "solid",
-        "image": "../images/sneakers/HighTop/adidas-shark-highTop2.jpg"
+        "image": "images/sneakers/HighTop/adidas-shark-highTop2.jpg"
     },
     {
         "brand_name": "Nike",
@@ -30,6 +30,6 @@
         "price": 200000,
         "lace_colour": "white",
         "sole_type": "solid",
-        "image": "../images/sneakers/HighTop/Nike-Blazer.jpg"
+        "image": "images/sneakers/HighTop/Nike-Blazer.jpg"
     }
 ]
