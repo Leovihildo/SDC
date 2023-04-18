@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shoesdotcom</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- The Styled sheet -->
+    <link rel="stylesheet" href="css/shoes.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d2d33bd796.js" crossorigin="anonymous"></script>
+
+    <!-- Swiper-js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- HOME PAGE -->
+    <!-- NAV/HOME MENU -->
+    <main-header></main-header>
+
+    <!-- Body of the Page -->
+    <div id="main-content" class="section">
+        <div class="hero-img"></div>
+            <div class="msg">
+                <p>You want some<span class="large-text"> Sneakers &excl;</span>
+                </p>
+                <a id="btns" href="#contents">
+                    <button type="button" class="btn-start">Get Started</button>
+                </a>
+            </div>
+    </div>
+
+    <!-- Contents of the page  -->
+    <div class="section" id="contents">
+        <div class="container">
+            <!-- Filter settings -->
+        <my-filter></my-filter>
+        
+            <!-- Products -->
+            <div class="results bg-muted"></div>
+
+             <!-- High tops -->
+             <div class="swiper mySwiper products-container" id="HighTop">
+                <h3 class="text-muted loading loading-text">High tops</h3>
+                <div class="swiper-wrapper high-tops">
+                    <!-- HIGH TOPS---- -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div> 
+            <!-- End of High tops -->
+            <a href="product.html" class="product-create">
+                <p><i class="fa fa-plus-circle" aria-hidden="true" style="margin-right: 5px;"></i>Create your own shoe</p>
+            </a>
+        </div>
+    </div>
+
+    
+    <!-- -----FOOTER SECTION--- -->
+  <main-footer></main-footer>
+   
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/sdc.js"></script>
+  <script src="js/hightops.js"></script>
+  <script src="js/jQuery v3.6.0.js"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
+</body>
+</html>
