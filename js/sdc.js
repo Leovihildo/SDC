@@ -73,7 +73,7 @@ class Filter extends HTMLElement{
                     '<ul class="option-list">'+
                         '<li><a href="javascript: void(0)" class="brand-opt dropdown-item">'+
                              '<span id="price-opt-value">40,000</span>'+
-                             '<input type="range" id="price-opt" name="price" min="40,000" max="400,000" oninput="document.getElementById('"price-opt-value"').innerHTML = this.value">'+
+                             '<input type="range" id="price-opt" name="price" min="40,000" max="400,000">'+
                              '<span>400,000</span></a></li>'+
                     '</ul>'+
                 '</li>'+
@@ -231,6 +231,11 @@ product_http.send();
 // for (var i=0; i<cart_btns.length; i++){
 //     console.log(cart_btns[i]);
 // }
+
+// Filter range input function
+document.getElementById("price-opt").addEventListener('input', () =>{
+     document.getElementById("price-opt-value").innerHTML = this.value;
+})
 
 // Saved Items
 let product_nums = localStorage.getItem('cartedItems');
