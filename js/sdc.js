@@ -233,10 +233,13 @@ product_http.send();
 // }
 
 // Filter range input function
-document.getElementById("price-opt").addEventListener('input', () =>{
-     document.getElementById("price-opt-value").innerHTML = this.value;
+document.addEventListener('DOMContentLoaded', function() { 
+    var priceOpt = document.getElementById('price-opt'); 
+    var priceOptValue = document.getElementById('price-opt-value'); 
+    priceOpt.addEventListener('input', function() { 
+        priceOptValue.innerHTML = priceOpt.value;
+    })
 })
-
 // Saved Items
 let product_nums = localStorage.getItem('cartedItems');
     if (product_nums){
