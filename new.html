@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shoesdotcom</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- The Styled sheet -->
+    <link rel="stylesheet" href="css/shoes.css">
+
+    <!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/d2d33bd796.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- Swiper-js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- HOME PAGE -->
+    <!-- NAV/HOME MENU -->
+    <main-header></main-header>
+
+    <!-- Body of the Page -->
+    <div class="container">
+        <h1><a href="index.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><br><br>Add a New Product</h1>
+    </div>
+
+    <!-- Contents of the page  -->
+    <div class="section" id="contents">
+        <div class="container">
+            <form class="shoe-form">
+                <div class="shoe-brand">
+                    <h6>Give your brand a name</h6>
+                    <input type="text" id="inputText4" name="brand-name" class="form-control brand-name">
+                </div>
+                <div class="shoe-category">
+                    <h6>Select a category</h6>
+                    <label for="Lowtops" class="form-label">Lowtops</label>
+                    <input id="Lowtops" type="radio" name="category" value="Lowtops" class="form-control-radio">
+
+                    <label for="Midtops" class="form-label">Midtops</label>
+                    <input id="Midtops" type="radio" name="category" value="Midtops" class="form-control-radio">
+
+                    <label for="Hightops" class="form-label">Hightops</label>
+                    <input id="Hightops" type="radio" name="category" value="Hightops" class="form-control-radio">
+                </div>
+                <div class="shoe-price">
+                    <h6>Put a price tag on your product</h6>
+                    <input type="text" id="inputText4" name="brand-price" class="form-control brand-price">
+                </div>
+                <div class="shoe-pic">
+                    <h6>Upload shoe image</h6>
+                    <input type="file" id="inputImg4" name="brand-img" class="form-control brand-img">
+                </div>
+                <a href="javascript:void(0)" class="btn-shoe-form"><button type="submit" class="btn-success btn">Submit</button></a>
+            </form>
+        </div> 
+        <!-- END OF CONTAINER -->
+    </div>
+    <!-- END OF SECTION -->
+
+    
+    <!-- -----FOOTER SECTION--- -->
+  <main-footer></main-footer>
+   
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/sdc.js"></script>
+  <script src="dist/bundle.js"></script>
+  <script src="js/Add.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="js/bootstrap.min.js"></script> -->
+  <script src="js/tops.js"></script>
+  <script src="js/jQuery v3.6.0.js"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
+  <!-- <script src="Products/index.js"></script> -->
+</body>
+</html>
