@@ -49,9 +49,65 @@ midtopsHttp.onload = ()=>{
          cart_btns.forEach(cart_btn => {
              cart_btn.addEventListener('click', addedtocart);
          });
+         // Get the filter options
+const brandOptions = document.querySelectorAll('input[name="brand"]');
+const colorOptions = document.querySelectorAll('input[name="colour"]');
+const priceOption = document.getElementById('price-opt');
+
+// Get the product cards
+const productCards = document.querySelectorAll('.card');
+
+// Add event listeners to filter options
+brandOptions.forEach(option => {
+  option.addEventListener('change', applyFilters);
+});
+
+colorOptions.forEach(option => {
+  option.addEventListener('change', applyFilters);
+});
+
+priceOption.addEventListener('input', applyFilters);
+
+// Define function to apply selected filters
+function applyFilters() {
+  // Get selected filter values
+  const selectedBrand = document.querySelector('input[name="brand"]:checked')?.value;
+  const selectedColor = document.querySelector('input[name="colour"]:checked')?.value;
+  const selectedPrice = priceOption.value;
+
+  // Loop through product cards and apply filters
+  productCards.forEach(card => {
+    // Get product data from card
+    const brand = card.querySelector('.card-title')?.textContent;
+    const color = card.querySelector('.card-text')?.textContent;
+    const price = parseInt(card.querySelector('.card-text')?.textContent);
+
+    // Apply brand filter
+    if (selectedBrand && brand !== selectedBrand) {
+      card.style.display = 'none';
+      return;
+    }
+
+    // Apply color filter
+    if (selectedColor && color !== selectedColor) {
+      card.style.display = 'none';
+      return;
+    }
+
+    // Apply price filter
+    if (price < selectedPrice) {
+      card.style.display = 'none';
+      return;
+    }
+
+    // Display card if it passes all filters
+    card.style.display = 'block';
+  });
+}
+
          // Swiper Container
          var swiper = new Swiper(".mySwiper", {
-             slidesPerView: 1,
+             slidesPerView: 2,
              centeredSlides: true,
              spaceBetween: 30,
              loop: true,
