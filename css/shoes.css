@@ -224,10 +224,14 @@ hr{
 }
 .search-bar {
   position: relative;
+  border-radius: 20px; /* add border radius to create rounded corners */
+  overflow: hidden; /* hide any content that may overflow from the search bar */
 }
 
 .search-bar input[type="text"] {
   padding-right: 30px; /* adjust the padding-right value to match the size of your search icon */
+  width: 100%; /* set the input field to take up all available space within the search bar */
+  border: none; /* remove the default input field border */
 }
 
 .search-bar .search {
@@ -238,11 +242,15 @@ hr{
 }
 
 @media screen and (max-width: 767px) {
-  /* adjust the position of the search icon for small screens */
+  .search-bar {
+    width: 100%; /* set the search bar to take up the full width of the screen */
+  }
+
   .search-bar .search {
     right: 5px;
   }
 }
+
 /*.search-bar{
     width: 44.5vw;
     display: flex;
