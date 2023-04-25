@@ -222,7 +222,28 @@ hr{
     margin: 5px 0 5px 10px;
     font-size: var(--xs-font-size);
 }
-.search-bar{
+.search-bar {
+  position: relative;
+}
+
+.search-bar input[type="text"] {
+  padding-right: 30px; /* adjust the padding-right value to match the size of your search icon */
+}
+
+.search-bar .search {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* adjust the right value to position the search icon as desired */
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 767px) {
+  /* adjust the position of the search icon for small screens */
+  .search-bar .search {
+    right: 5px;
+  }
+}
+/*.search-bar{
     width: 44.5vw;
     display: flex;
     height: 2rem;
@@ -238,7 +259,7 @@ hr{
 .fa-search{
     cursor: pointer;
     font-size: var(--icon-font-size);
-}
+}*/
 .results{
    display: none;
    margin-bottom: var(--mb-md);
