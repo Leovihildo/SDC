@@ -73,7 +73,7 @@ class Filter extends HTMLElement{
                     '<ul class="option-list">'+
                         '<li><a href="javascript: void(0)" class="brand-opt dropdown-item">'+
                              '<span id="price-opt-value">40,000</span>'+
-                             '<input type="range" id="price-opt" name="price" min="40,000" max="400,000">'+
+                             '<input type="range" id="price-opt" name="price" min="40000" max="400000">'+
                              '<span>400,000</span></a></li>'+
                     '</ul>'+
                 '</li>'+
