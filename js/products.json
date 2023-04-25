@@ -1,0 +1,9 @@
+[
+    {"brand_name":"Adidas","brand_model":"Adidas Yeezy","category":"lowtops"," colour":"grey","lace":1,"price":200000,"lace_colour":"pink","sole_type":"solid","image":"../images/sneakers/LowTop/adidas-yeezy-lowTop4.jpg"},
+    {"brand_name":"Adidas","brand_model":"Adidas all-stars","category":"lowtops"," colour":"multicoloured","lace":1,"price":200000,"lace_colour":"white","sole_type":"solid","image":"../images/sneakers/LowTop/adidas-lowTop3.jpg"},
+    {"brand_name":"Adidas","brand_model":"Adidas all-stars","category":"lowtops"," colour":"peach","lace":1,"price":200000,"lace_colour":"peach","sole_type":"solid","image":"../images/sneakers/LowTop/adidas-lowTop.jpg"},
+    {"brand_name":"Nike","brand_model":"Nike all-stars","category":"hightops"," colour":"white","lace":1,"price":200000,"lace_colour":"black","sole_type":"solid","image":"../images/sneakers/HighTop/nike-highTop1.jpg"},
+    {"brand_name":"Adidas","brand_model":"Adidas Shark","category":"hightops"," colour":"grey","lace":1,"price":200000,"lace_colour":"black","sole_type":"solid","image":"../images/sneakers/HighTop/adidas-shark-highTop2.jpg"},
+    {"brand_name":"Nike","brand_model":"Nike Blazer","category":"hightops"," colour":"black","lace":1,"price":200000,"lace_colour":"white","sole_type":"solid","image":"../images/sneakers/HighTop/Nike-Blazer.jpg"},
+    {"brand_name":"Adidas","brand_model":"Adidas all-stars","category":"lowtops"," colour":"white","lace":1,"price":200000,"lace_colour":"white","sole_type":"solid","image":"../images/sneakers/LowTop/adidas-lowTop2.jpg"}
+]
