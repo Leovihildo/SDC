@@ -215,6 +215,12 @@ hr{
 .option-list label{
     text-align: right;
 }
+.option-list label,.option-list input {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px; /* optional - add spacing between label and input */
+}
+
 .option-list label:after{
     content: ":";
 }
@@ -226,6 +232,8 @@ hr{
   position: relative;
   border-radius: 20px; /* add border radius to create rounded corners */
   overflow: hidden; /* hide any content that may overflow from the search bar */
+  margin: 10px 0;
+  padding: 10px 3px;
 }
 
 .search-bar input[type="text"] {
