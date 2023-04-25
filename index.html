@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shoesdotcom</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- The Styled sheet -->
+    <link rel="stylesheet" href="css/shoes.css">
+
+    <!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/d2d33bd796.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- Swiper-js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- HOME PAGE -->
+    <!-- NAV/HOME MENU -->
+    <main-header></main-header>
+
+    <!-- Body of the Page -->
+    <div id="main-content" class="section">
+        <div class="hero-img"></div>
+            <div class="msg">
+                <p>You want some<span class="large-text"> Sneakers &excl;</span>
+                </p>
+                <a id="btns" href="#contents">
+                    <button type="button" class="btn-start">Get Started</button>
+                </a>
+            </div>
+    </div>
+
+    <!-- Contents of the page  -->
+    <div class="section" id="contents">
+        <div class="container">
+           <!-- Filter settings -->
+            <my-filter></my-filter>
+        
+            <!-- Products -->
+            <div class="results bg-muted"></div>
+            <!-- Uncategorized Products-->
+            <div class="swiper mySwiper products-container">
+                <div class="swiper-wrapper all-category">
+                <!-- Product Cards -->
+                    <!-- <div class="products"></div> -->
+                </div> 
+                <!-- End of Swiper Wrapper -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <!-- End of SWiper 1 -->
+
+            <div class="swiper mySwiper products-container">
+                <div class="swiper-wrapper added-items">
+                <!-- Product Cards -->
+                    <!-- <div class="products"></div> -->
+                </div> 
+                <!-- End of Swiper Wrapper -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <!-- End of SWiper 2 -->
+            <!-- End of uncategorized -->
+            <!-- create new product -->
+            <div class="product-create row">
+                <a href="product.html" class="col-md-4 col-sm-12"><p><i class="fa fa-plus-circle" aria-hidden="true" style="margin-right: 5px;"></i>Create your own shoe</p></a>
+                <a href="new.html" class="col-md-4 col-sm-12"><p><i class="fa fa-plus-circle" aria-hidden="true" style="margin-right: 5px;"></i>Add Shoe product</p></a>
+            </div>
+        </div> 
+        <!-- END OF CONTAINER -->
+    </div>
+    <!-- END OF SECTION -->
+
+    
+    <!-- -----FOOTER SECTION--- -->
+  <main-footer></main-footer>
+   
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/sdc.js"></script>
+  <script src="js/Add.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="js/bootstrap.min.js"></script> -->
+  <script src="js/tops.js"></script>
+  <script src="js/jQuery v3.6.0.js"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
+  <!-- <script src="Products/index.js"></script> -->
+</body>
+</html>
