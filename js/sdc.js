@@ -191,7 +191,7 @@ product_http.onload = ()=>{
             cart_btn.addEventListener('click', addedtocart);
         });
 const search = document.getElementById('search');
-const productList = document.getElementById('product-list');
+const productList = document.querySelector(".all-category");
 const filterBrand = document.getElementsByName('brand');
 const filterColor = document.getElementsByName('color');
 const filterPrice = document.getElementById('price-opt');
