@@ -190,61 +190,85 @@ product_http.onload = ()=>{
         cart_btns.forEach(cart_btn => {
             cart_btn.addEventListener('click', addedtocart);
         });
-       // Get the filter options
-const brandOptions = document.querySelectorAll('input[name="brand"]');
-const colorOptions = document.querySelectorAll('input[name="colour"]');
-const priceOption = document.getElementById('price-opt');
+const search = document.getElementById('search');
+const productList = document.getElementById('product-list');
+const filterBrand = document.getElementsByName('brand');
+const filterColor = document.getElementsByName('color');
+const filterPrice = document.getElementById('price-opt');
+const applyFilterBtn = document.querySelector('.apply-btn');
 
-// Get the product cards
-const productCards = document.querySelectorAll('.card');
+let products = [];
 
-// Add event listeners to filter options
-brandOptions.forEach(option => {
-  option.addEventListener('change', applyFilters);
-});
+// Fetch Products
+const fetchProducts = async () => {
+  try {
+    const res = await fetch('products.json');
+    products = await res.json();
+    displayProducts(products);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-colorOptions.forEach(option => {
-  option.addEventListener('change', applyFilters);
-});
+// Display Products
+const displayProducts = (items) => {
+  let display = items.map((item) => {
+    return `<div class="card col-3 swiper-slide" style="width: 20rem;">
+                <img src ="${item.image}" class="card-img-top loading">
+                <div class="card-body">
+                    <h4 class="card-title loading">${item.brand_model}</h4>
+                    <p class="card-text loading">${item.price}</p>
+                    <div class="btn-cart loading"><a href="javascript: void(0)">Add to cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>
+                </div>
+            </div>`;
+  }).join('');
+  productList.innerHTML = display;
+};
 
-priceOption.addEventListener('input', applyFilters);
-
-// Define function to apply selected filters
-function applyFilters() {
-  // Get selected filter values
-  const selectedBrand = document.querySelector('input[name="brand"]:checked')?.value;
-  const selectedColor = document.querySelector('input[name="colour"]:checked')?.value;
-  const selectedPrice = priceOption.value;
-
-  // Loop through product cards and apply filters
-  productCards.forEach(card => {
-    // Get product data from card
-    const brand = card.querySelector('.card-title')?.textContent;
-    const color = card.querySelector('.card-text')?.textContent;
-    const price = parseInt(card.querySelector('.card-text')?.textContent);
-
-    // Apply brand filter
-    if (selectedBrand && brand !== selectedBrand) {
-      card.style.display = 'none';
-      return;
-    }
-
-    // Apply color filter
-    if (selectedColor && color !== selectedColor) {
-      card.style.display = 'none';
-      return;
-    }
-
-    // Apply price filter
-    if (price < selectedPrice) {
-      card.style.display = 'none';
-      return;
-    }
-
-    // Display card if it passes all filters
-    card.style.display = 'block';
+// Search Products
+search.addEventListener('keyup', (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredProducts = products.filter((product) => {
+    return (
+      product.brand_model.toLowerCase().includes(searchString)
+    );
   });
-}
+  displayProducts(filteredProducts);
+});
+
+// Filter Products
+applyFilterBtn.addEventListener('click', () => {
+  let filteredProducts = products;
+
+  // Filter by Brand
+  const selectedBrand = Array.from(filterBrand).filter((input) => input.checked);
+  if (selectedBrand.length > 0) {
+    const brandNames = selectedBrand.map((input) => input.value);
+    filteredProducts = filteredProducts.filter((product) => {
+      return brandNames.includes(product.brand);
+    });
+  }
+
+  // Filter by Color
+  const selectedColor = Array.from(filterColor).filter((input) => input.checked);
+  if (selectedColor.length > 0) {
+    const colorNames = selectedColor.map((input) => input.value);
+    filteredProducts = filteredProducts.filter((product) => {
+      return colorNames.includes(product.color);
+    });
+  }
+
+  // Filter by Price Range
+  const selectedPrice = filterPrice.value;
+  filteredProducts = filteredProducts.filter((product) => {
+    return product.price >= selectedPrice;
+  });
+
+  displayProducts(filteredProducts);
+});
+
+fetchProducts();
+
 
         // Swiper Container
         var swiper = new Swiper(".mySwiper", {
