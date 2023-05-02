@@ -4,7 +4,7 @@ import * as THREE from 'three';
 // Set up the Three.js scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#canvas') });
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas') });
 
 // Add some lighting to the scene
 const light = new THREE.PointLight(0xffffff, 1, 100);
@@ -65,8 +65,46 @@ function animate() {
 animate();
 
 // Handle user input
+let isDragging = false;
+let previousMousePosition = {
+  x: 0,
+  y: 0
+};
+
 function handleInput(event) {
-  // TODO: Handle user input (e.g. dragging the shoe model)
+  const deltaMove = {
+    x: event.offsetX - previousMousePosition.x,
+    y: event.offsetY - previousMousePosition.y
+  };
+
+  if (isDragging) {
+    const deltaRotationQuaternion = new THREE.Quaternion()
+      .setFromEuler(new THREE.Euler(
+        toRadians(deltaMove.y * 1),
+        toRadians(deltaMove.x * 1),
+        0,
+        'XYZ'
+      ));
+
+    shoe.quaternion.multiplyQuaternions(deltaRotationQuaternion, shoe.quaternion);
+  }
+
+  previousMousePosition = {
+    x: event.offsetX,
+    y: event.offsetY
+  };
 }
+
+function toRadians(angle) {
+  return angle * (Math.PI / 180);
+}
+
+document.addEventListener('mousedown', () => {
+  isDragging = true;
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
 
 document.addEventListener('mousemove', handleInput);
