@@ -62,17 +62,23 @@
            <!-- End of Spinner -->
           
           <!-- Shoe Editor -->
-    <canvas id="canvas" class="hidden"></canvas>
-
-    <!-- Add brand dropdown to page -->
-    <select id="brand-dropdown">
-      <option value="nike">Nike</option>
-      <option value="adidas">Adidas</option>
-      <option value="puma">
-
-
-    <!-- Add color picker to page -->
-<input type="color" id="color-picker" />
+          <div id="second-page" class="hidden">
+             <canvas id="canvas"></canvas>
+            
+             <!-- Add brand dropdown to page -->
+             <select id="brand-dropdown">
+              <option value="nike">Nike</option>
+              <option value="adidas">Adidas</option>
+              <option value="puma">
+                
+             <!-- Add color picker to page -->
+             <input type="color" id="color-picker" />
+           </div>
+           <!-- End of Shoe Editor -->
+        </div>
+         <!-- End of Container-->
+      </div>
+      <!--  End of Section-->
 
 <!-- JavaScript code to handle color picker input -->
 <script>
@@ -81,6 +87,7 @@
     const color = colorPicker.value;
     shoeMaterial.color.set(color);
   });
+  
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/create.js"></script>
