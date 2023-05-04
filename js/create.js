@@ -1,6 +1,6 @@
 var clear_spinner_1 = ()=>{
     document.querySelector(".spinner").classList.add("hidden");
-    document.getElementById("canvas").classList.remove("hidden");
+    document.getElementById("second-page").classList.remove("hidden");
 }
 // Move to shoe editor
 document.querySelector(".yes-btn").addEventListener('click', ()=>{
