@@ -1,3 +1,14 @@
+var clear_spinner_1 = ()=>{
+    document.querySelector(".spinner").classList.add("hidden");
+    document.getElementById("canvas").classList.remove("hidden");
+}
+// Move to shoe editor
+document.querySelector(".yes-btn").addEventListener('click', ()=>{
+    document.querySelector(".intro").classList.add("hidden");
+    document.querySelector(".spinner").classList.remove("hidden");
+    const my_spinner_1 = setTimeout(clear_spinner_1, 8000);      
+});
+
 // Import Three.js and any other necessary libraries
 import * as THREE from 'three';
 
