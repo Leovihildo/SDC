@@ -43,7 +43,7 @@ class Header extends HTMLElement{
 class Filter extends HTMLElement{
     connectedCallback(){
         this.innerHTML = 
-        '<div class="row">'+
+        '<div class="row d-flex align-items-center">'+
             '<div class="dropdown col-6">'+
                ' <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">'+
                ' Filter'+
