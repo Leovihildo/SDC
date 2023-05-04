@@ -10,8 +10,7 @@ document.querySelector(".yes-btn").addEventListener('click', ()=>{
 });
 
 // Import Three.js and any other necessary libraries
-// import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.module.js';
-import * as THREE from './three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.module.js';
 
 // Set up the Three.js scene
 const scene = new THREE.Scene();
@@ -31,7 +30,7 @@ shoe.position.set(0, 0, -5);
 scene.add(shoe);
 
 // Load shoe model
-import { GLTFLoader } from './GLTFLoader.js';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.131.2/examples/jsm/loaders/GLTFLoader.js';;
 const loader = new THREE.GLTFLoader();
 loader.load('models/shoe.glb', (gltf) => {
   const shoeModel = gltf.scene;
