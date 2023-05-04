@@ -10,7 +10,7 @@ document.querySelector(".yes-btn").addEventListener('click', ()=>{
 });
 
 // Import Three.js and any other necessary libraries
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.module.js';
 
 // Set up the Three.js scene
 const scene = new THREE.Scene();
