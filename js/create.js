@@ -12,8 +12,8 @@ document.querySelector(".yes-btn").addEventListener('click', ()=>{
 // Import Three.js and any other necessary libraries
 // import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.module.js';
 // import { GLTFLoader } from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/jsm/loaders/GLTFLoader.js';
-import * as THREE from './three.module.js';
-import { GLTFLoader } from './GLTFLoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'GLTFLoader';
 
 // Set up the Three.js scene
 const scene = new THREE.Scene();
