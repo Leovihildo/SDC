@@ -33,7 +33,7 @@ shoe.position.set(0, 0, -5);
 scene.add(shoe);
 
 // Load shoe model
-const loader = new THREE.GLTFLoader();
+const loader = new GLTFLoader();
 loader.load('models/shoe.glb', (gltf) => {
   const shoeModel = gltf.scene;
   scene.add(shoeModel);
