@@ -102,18 +102,24 @@
 // .then(data => console.log(data))
 // .catch(error => console.error(error));
 let shoes = JSON.parse(localStorage.getItem("Shoes"));
-if (shoes){
-    let output = "";
-output += '<div class="card col-3 swiper-slide" style="width: 20rem;">'+
-'<img src ="'+shoes[0]+'" class="card-img-top loading">'+
-'<div class="card-body">'+
-    '<h4 class="card-title loading">'+shoes[1]+'</h4>'+
-    '<p class="card-text loading">'+shoes[2]+'</p>'+
-    '<div class="btn-cart loading"><a href="javascript: void(0)">Add to cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>'+
-'</div>'+
-'</div>';
 
-document.querySelector(".added-items").innerHTML = output;
+if (shoes) {
+  let output = "";
+  
+  for (let i = 0; i < shoes.length; i++) {
+    output += '<div class="card col-3 swiper-slide" style="width: 20rem;">'+
+              '<img src ="'+shoes[i][0]+'" class="card-img-top loading">'+
+              '<div class="card-body">'+
+              '<h4 class="card-title loading">'+shoes[i][1]+'</h4>'+
+              '<p class="card-text loading">'+shoes[i][2]+'</p>'+
+              '<div class="btn-cart loading"><a href="javascript: void(0)">Add to cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>'+
+              '</div>'+
+              '</div>';
+  }
+
+  document.querySelector(".added-items").innerHTML = output;
+}
+
 // Skeleton Loading function
 setTimeout(() => {
 let textheaders = document.querySelectorAll(".loading-text");
