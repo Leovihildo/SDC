@@ -118,7 +118,6 @@ if (shoes) {
   }
 
   document.querySelector(".added-items").innerHTML = output;
-}
 
 // Skeleton Loading function
 setTimeout(() => {
