@@ -36,10 +36,27 @@ shoe.position.set(0, 0, -5);
 scene.add(shoe);
 
 // Load shoe model
-const loader = new GLTFLoader();
-loader.load('models/shoe.glb', (gltf) => {
-  const shoeModel = gltf.scene;
-  scene.add(shoeModel);
+const loader = new GLTFLoader().setPath( 'models/gltf/MaterialsVariantsShoe/glTF/' );
+loader.load( 'MaterialsVariantsShoe.gltf', function ( gltf ) {
+    gltf.scene.scale.set( 10.0, 10.0, 10.0 );
+    scene.add( gltf.scene );
+    
+    // GUI
+    const gui = new GUI();
+
+    // Details of the KHR_materials_variants extension used here can be found below
+    // https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants
+    const parser = gltf.parser;
+    const variantsExtension = gltf.userData.gltfExtensions[ 'KHR_materials_variants' ];
+    const variants = variantsExtension.variants.map( ( variant ) => variant.name );
+    const variantsCtrl = gui.add( state, 'variant', variants ).name( 'Variant' );
+
+    selectVariant( scene, parser, variantsExtension, state.variant );
+
+    variantsCtrl.onChange( ( value ) => selectVariant( scene, parser, variantsExtension, value ) );
+
+    render();
+	} );
 
   // Add heels
   const heelGeometry = new THREE.CylinderGeometry(0.5, 0.5, 1, 32);
