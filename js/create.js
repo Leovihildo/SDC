@@ -35,9 +35,9 @@ camera.position.z = 5;
 const controls = new OrbitControls( camera, renderer.domElement );
 
 // add a light to the scene
-const light = new THREE.PointLight( 0xffffff, 1, 100 );
-light.position.set( 0, 0, 10 );
-scene.add( light );
+const light = new THREE.PointLight(0xffffff, 1);
+light.position.set(0, 0, 2);
+scene.add(light);
 
 // load the shoe model
 const loader = new GLTFLoader().setPath( 'images/gltf/' );;
