@@ -36,8 +36,8 @@ shoe.position.set(0, 0, -5);
 scene.add(shoe);
 
 // Load shoe model
-const loader = new GLTFLoader().setPath( 'models/gltf/MaterialsVariantsShoe/glTF/' );
-loader.load( 'MaterialsVariantsShoe.gltf', function ( gltf ) {
+const loader = new GLTFLoader().setPath( 'images/gltf/' );
+loader.load( 'converse_max.gltf', function ( gltf ) {
     gltf.scene.scale.set( 10.0, 10.0, 10.0 );
     const shoeModel = gltf.scene;
     scene.add(shoeModel);
