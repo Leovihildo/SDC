@@ -13,7 +13,7 @@ document.querySelector(".yes-btn").addEventListener('click', ()=>{
 // import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.module.js';
 // import { GLTFLoader } from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from 'three';
-import { GLTFLoader } from 'GLTFLoader';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // Set up the Three.js scene
 const scene = new THREE.Scene();
