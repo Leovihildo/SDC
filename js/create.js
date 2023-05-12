@@ -13,6 +13,7 @@ document.querySelector(".yes-btn").addEventListener('click', ()=>{
 // import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.130.0/build/three.module.js';
 // import { GLTFLoader } from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from 'three';
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
