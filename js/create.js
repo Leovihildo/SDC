@@ -56,35 +56,35 @@ function animate() {
 animate();
 
 // Handle user input
-let isDragging = false;
-let previousMousePosition = {
-  x: 0,
-  y: 0
-};
+// let isDragging = false;
+// let previousMousePosition = {
+//   x: 0,
+//   y: 0
+// };
 
-function handleInput(event) {
-  const deltaMove = {
-    x: event.offsetX - previousMousePosition.x,
-    y: event.offsetY - previousMousePosition.y
-  };
+// function handleInput(event) {
+//   const deltaMove = {
+//     x: event.offsetX - previousMousePosition.x,
+//     y: event.offsetY - previousMousePosition.y
+//   };
 
-  if (isDragging) {
-    const deltaRotationQuaternion = new THREE.Quaternion()
-      .setFromEuler(new THREE.Euler(
-        toRadians(deltaMove.y * 1),
-        toRadians(deltaMove.x * 1),
-        0,
-        'XYZ'
-      ));
+//   if (isDragging) {
+//     const deltaRotationQuaternion = new THREE.Quaternion()
+//       .setFromEuler(new THREE.Euler(
+//         toRadians(deltaMove.y * 1),
+//         toRadians(deltaMove.x * 1),
+//         0,
+//         'XYZ'
+//       ));
 
-    shoe.quaternion.multiplyQuaternions(deltaRotationQuaternion, shoe.quaternion);
-  }
+//     shoe.quaternion.multiplyQuaternions(deltaRotationQuaternion, shoe.quaternion);
+//   }
 
-  previousMousePosition = {
-    x: event.offsetX,
-    y: event.offsetY
-  };
-}
+//   previousMousePosition = {
+//     x: event.offsetX,
+//     y: event.offsetY
+//   };
+// }
 
 function toRadians(angle) {
   return angle * (Math.PI / 180);
