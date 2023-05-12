@@ -19,83 +19,40 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 
 // Set up the Three.js scene
+// create a scene
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas') });
 
-// Add some lighting to the scene
-const light = new THREE.PointLight(0xffffff, 1, 100);
-light.position.set(0, 0, 10);
-scene.add(light);
+// create a renderer
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
 
-// Define the shoe model
-const shoeGeometry = new THREE.BoxGeometry(1, 1, 1);
-const shoeMaterial = new THREE.MeshStandardMaterial({ color: 0x808080 });
-const shoe = new THREE.Mesh(shoeGeometry, shoeMaterial);
-shoe.position.set(0, 0, -5);
-scene.add(shoe);
-
-// Load shoe model
-const loader = new GLTFLoader().setPath( 'images/gltf/' );
-loader.load( 'converse_max.gltf', function ( gltf ) {
-    gltf.scene.scale.set( 10.0, 10.0, 10.0 );
-    const shoeModel = gltf.scene;
-    scene.add(shoeModel);
-    
-    // GUI
-    const gui = new GUI();
-
-    // Details of the KHR_materials_variants extension used here can be found below
-    // https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants
-    const parser = gltf.parser;
-    const variantsExtension = gltf.userData.gltfExtensions[ 'KHR_materials_variants' ];
-    const variants = variantsExtension.variants.map( ( variant ) => variant.name );
-    const variantsCtrl = gui.add( state, 'variant', variants ).name( 'Variant' );
-
-    selectVariant( scene, parser, variantsExtension, state.variant );
-
-    variantsCtrl.onChange( ( value ) => selectVariant( scene, parser, variantsExtension, value ) );
-
-    render();
-	} );
-
-  // Add heels
-  const heelGeometry = new THREE.CylinderGeometry(0.5, 0.5, 1, 32);
-  const heelMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
-  const leftHeel = new THREE.Mesh(heelGeometry, heelMaterial);
-  leftHeel.position.set(-2, 0.5, 0);
-  shoeModel.add(leftHeel);
-  const rightHeel = new THREE.Mesh(heelGeometry, heelMaterial);
-  rightHeel.position.set(2, 0.5, 0);
-  shoeModel.add(rightHeel);
-
-  // Add laces
-  const laceGeometry = new THREE.BoxGeometry(0.1, 0.5, 0.1);
-  const laceMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-  const leftLace = new THREE.Mesh(laceGeometry, laceMaterial);
-  leftLace.position.set(-0.5, 1, 1);
-  shoeModel.add(leftLace);
-  const rightLace = new THREE.Mesh(laceGeometry, laceMaterial);
-  rightLace.position.set(0.5, 1, 1);
-  shoeModel.add(rightLace);
-
-  // Add brand logo
-  const logoGeometry = new THREE.BoxGeometry(1, 1, 1);
-  const logoTexture = new THREE.TextureLoader().load('textures/logo.png');
-  const logoMaterial = new THREE.MeshBasicMaterial({ map: logoTexture });
-  const logo = new THREE.Mesh(logoGeometry, logoMaterial);
-  logo.position.set(0, 2, -2);
-  shoeModel.add(logo);
-
-// Set up the camera
+// create a camera
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 camera.position.z = 5;
 
-// Render the scene
-function animate() {
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
-}
+// create an orbit controls object to move the camera around the scene
+const controls = new OrbitControls( camera, renderer.domElement );
 
+// add a light to the scene
+const light = new THREE.PointLight( 0xffffff, 1, 100 );
+light.position.set( 0, 0, 10 );
+scene.add( light );
+
+// load the shoe model
+const loader = new GLTFLoader().setPath( 'images/gltf/' );;
+loader.load( 'converse_max.gltf', function ( gltf ) {
+    // add the loaded mesh to the scene
+    const mesh = gltf.scene.children[ 0 ];
+    mesh.scale.set( 0.5, 0.5, 0.5 ); // scale down the mesh
+    scene.add( mesh );
+});
+
+// render the scene
+function animate() {
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera );
+}
 animate();
 
 // Handle user input
