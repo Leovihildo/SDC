@@ -39,7 +39,8 @@ scene.add(shoe);
 const loader = new GLTFLoader().setPath( 'models/gltf/MaterialsVariantsShoe/glTF/' );
 loader.load( 'MaterialsVariantsShoe.gltf', function ( gltf ) {
     gltf.scene.scale.set( 10.0, 10.0, 10.0 );
-    scene.add( gltf.scene );
+    const shoeModel = gltf.scene;
+    scene.add(shoeModel);
     
     // GUI
     const gui = new GUI();
