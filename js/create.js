@@ -85,7 +85,6 @@ loader.load( 'MaterialsVariantsShoe.gltf', function ( gltf ) {
   const logo = new THREE.Mesh(logoGeometry, logoMaterial);
   logo.position.set(0, 2, -2);
   shoeModel.add(logo);
-});
 
 // Set up the camera
 camera.position.z = 5;
